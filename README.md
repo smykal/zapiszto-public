@@ -214,6 +214,6 @@ This project serves as a practical demonstration of full-stack development skill
 
 ---
 
-**Author:** [Your Name]
+**Author:** SmykalMateusz
 
 **Repository:** [GitHub](https://github.com/YOUR_USERNAME/zapiszto-portfolio)
