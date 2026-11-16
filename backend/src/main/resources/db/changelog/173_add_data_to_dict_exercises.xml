@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add data to dict_exercises_basic Plank" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="66ab7e8a-082c-4326-a9a5-b3dcd3ac00de"/>
+            <column name="name" value='{
+                                            "en": "Plank",
+                                            "es": "Plancha",
+                                            "it": "Plank",
+                                            "pl": "Plank",
+                                            "ru": "Планка",
+                                            "ua": "Планка"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="e5885531-3b3a-4234-84cf-94f1a6ff65e7"/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('d3dae99a-8721-4c0b-b262-7cb23175b0a4'::uuid, '66ab7e8a-082c-4326-a9a5-b3dcd3ac00de'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

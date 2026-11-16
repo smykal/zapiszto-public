@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ================= dict_tags_basic ================= -->
+    <changeSet id="insert-dict-tags-basic-01" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="3aeff5d5-2323-43b6-a2fc-70002e81587f"/>
+            <column name="name"><![CDATA[
+            {
+              "pl": "Podwójny biceps (przód)",
+              "en": "Front Double Biceps",
+              "es": "Doble bíceps frontal",
+              "it": "Doppio bicipite frontale",
+              "uk": "Подвійний біцепс (спереду)"
+            }
+            ]]></column>
+            <column name="description"><![CDATA[
+            {
+              "pl": "Pokazanie bicepsów, klatki piersiowej, przedramion, brzucha i ud.",
+              "en": "Display of biceps, chest, forearms, abs and thighs.",
+              "es": "Exhibición de bíceps, pecho, antebrazos, abdomen y muslos.",
+              "it": "Mostra di bicipiti, petto, avambracci, addome e cosce.",
+              "uk": "Демонстрація біцепсів, грудей, передпліч, преса та стегон."
+            }
+            ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-02" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="d8271205-c7fe-4e6b-8500-3b7411d05851"/>
+            <column name="name"><![CDATA[
+            {
+              "pl": "Najszerszy grzbietu (przód)",
+              "en": "Front Lat Spread",
+              "es": "Expansión dorsal frontal",
+              "it": "Espansione dorsale frontale",
+              "uk": "Найширші м’язи спини (спереду)"
+            }
+            ]]></column>
+            <column name="description"><![CDATA[
+            {
+              "pl": "Napinanie najszerszych mięśni grzbietu, poszerzanie klatki piersiowej, napięcie nóg.",
+              "en": "Lat expansion, chest width and leg tension.",
+              "es": "Expansión dorsal, amplitud del pecho y tensión de piernas.",
+              "it": "Espansione dorsale, ampiezza del petto e tensione delle gambe.",
+              "uk": "Напруження найширших м’язів спини, розширення грудної клітки та напруження ніг."
+            }
+            ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-03" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="c6b87bcc-e3e3-4f1e-afc3-ee877dd7b53d"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Klatka piersiowa (bokiem)",
+          "en": "Side Chest",
+          "es": "Pecho de lado",
+          "it": "Petto laterale",
+          "uk": "Груди збоку"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Ekspozycja mięśni klatki piersiowej, ramion i brzucha z boku.",
+          "en": "Side display of chest, arms and abdominal muscles.",
+          "es": "Exhibición lateral de pecho, brazos y abdomen.",
+          "it": "Mostra laterale di petto, braccia e addome.",
+          "uk": "Бокова демонстрація грудних м’язів, рук і преса."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-04" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="f55c34d2-b5c0-44a6-8fcf-c3e17d2c29a7"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Podwójny biceps (tył)",
+          "en": "Back Double Biceps",
+          "es": "Doble bíceps de espalda",
+          "it": "Doppio bicipite di schiena",
+          "uk": "Подвійний біцепс (ззаду)"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Demonstrowanie bicepsów, tricepsów, mięśni grzbietu i łydek.",
+          "en": "Display of biceps, triceps, back muscles and calves.",
+          "es": "Demostración de bíceps, tríceps, espalda y pantorrillas.",
+          "it": "Dimostrazione di bicipiti, tricipiti, schiena e polpacci.",
+          "uk": "Демонстрація біцепсів, трицепсів, м’язів спини та литок."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-05" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="decd98e8-9f0b-4793-8a85-8478b6b25cbc"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Najszerszy grzbietu (tył)",
+          "en": "Back Lat Spread",
+          "es": "Expansión dorsal trasera",
+          "it": "Espansione dorsale posteriore",
+          "uk": "Найширші м’язи спини (ззаду)"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Pokazanie szerokości i detali pleców.",
+          "en": "Showcasing width and details of the back.",
+          "es": "Mostrar la anchura y los detalles de la espalda.",
+          "it": "Mostrare ampiezza e dettagli della schiena.",
+          "uk": "Показ ширини та деталей м’язів спини."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-06" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="e02be990-acf9-4006-9c6f-07fe6f19e272"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Triceps (bokiem)",
+          "en": "Side Triceps",
+          "es": "Tríceps de lado",
+          "it": "Tricipite laterale",
+          "uk": "Трицепс збоку"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Napięcie tricepsa, pośladków i łydek z profilu.",
+          "en": "Side tension of triceps, glutes and calves.",
+          "es": "Tensión lateral de tríceps, glúteos y pantorrillas.",
+          "it": "Tensione laterale di tricipiti, glutei e polpacci.",
+          "uk": "Бокове напруження трицепса, сідниць і литок."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-07" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="4fc1a74c-6fbb-4d7f-99ca-f74eaddf1395"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Brzuch i uda",
+          "en": "Abdominals and Thighs",
+          "es": "Abdominales y muslos",
+          "it": "Addominali e cosce",
+          "uk": "Прес і стегна"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Napinanie mięśni brzucha oraz ud.",
+          "en": "Tensing abdominal and thigh muscles.",
+          "es": "Contracción de abdominales y muslos.",
+          "it": "Contrazione di addominali e cosce.",
+          "uk": "Напруження м’язів преса та стегон."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-basic-08" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="ddcccc32-f1de-4c40-b127-098b27294c50"/>
+            <column name="name"><![CDATA[
+        {
+          "pl": "Najbardziej muskularna",
+          "en": "Most Muscular",
+          "es": "Más musculoso",
+          "it": "Più muscoloso",
+          "uk": "Найбільш мускулистий"
+        }
+        ]]></column>
+            <column name="description"><![CDATA[
+        {
+          "pl": "Pozycja pokazująca ogólną masę i gęstość mięśni.",
+          "en": "Pose showing overall muscle mass and density.",
+          "es": "Posición que muestra la masa y densidad muscular.",
+          "it": "Posa che mostra massa e densità muscolare.",
+          "uk": "Поза, що демонструє загальну масу та щільність м’язів."
+        }
+        ]]></column>
+        </insert>
+    </changeSet>
+
+    <!-- ================= dict_tags ================= -->
+    <changeSet id="insert-dict-tags-01" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="9c0ffdfe-098c-4370-b51b-9f99dace7cb2"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="3aeff5d5-2323-43b6-a2fc-70002e81587f"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-02" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="803291e9-da28-43ee-bd3c-3d4b8681bb50"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="d8271205-c7fe-4e6b-8500-3b7411d05851"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-03" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="2ef72f1e-949e-4c71-93d8-7166e75c4f82"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="c6b87bcc-e3e3-4f1e-afc3-ee877dd7b53d"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-04" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="07d264ee-ece0-4362-95f5-dd9a14ea338f"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="f55c34d2-b5c0-44a6-8fcf-c3e17d2c29a7"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-05" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="2c2f653a-3b53-4abb-a4fb-d03a90fc8628"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="decd98e8-9f0b-4793-8a85-8478b6b25cbc"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-06" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="2023f557-7efb-48f8-9ae1-6211596b8822"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="e02be990-acf9-4006-9c6f-07fe6f19e272"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-07" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="2f9fd766-d76c-4050-bc66-fd0d5187bc83"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="4fc1a74c-6fbb-4d7f-99ca-f74eaddf1395"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-dict-tags-08" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="72b928d8-a88c-4131-9729-f8ff117815c5"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="ddcccc32-f1de-4c40-b127-098b27294c50"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

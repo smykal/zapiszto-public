@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="create-dict-tags-tables" author="smykalm">
+
+        <!-- dict_tags_category -->
+        <createTable tableName="dict_tags_category">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- dict_tags_basic -->
+        <createTable tableName="dict_tags_basic">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- dict_tags_per_user -->
+        <createTable tableName="dict_tags_per_user">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="description" type="jsonb">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- FK: dict_tags_per_user → users -->
+        <addForeignKeyConstraint
+                baseTableName="dict_tags_per_user"
+                baseColumnNames="user_id"
+                constraintName="fk_dict_tags_per_user_user_id"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"/>
+
+        <!-- dict_tags -->
+        <createTable tableName="dict_tags">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="dict_tags_category_id" type="uuid"/>
+            <column name="dict_tags_basic_id" type="uuid"/>
+            <column name="dict_tags_per_user_id" type="uuid"/>
+        </createTable>
+
+        <!-- FK: dict_tags → dict_tags_basic -->
+        <addForeignKeyConstraint
+                baseTableName="dict_tags"
+                baseColumnNames="dict_tags_basic_id"
+                constraintName="fk_dict_tags_basic"
+                referencedTableName="dict_tags_basic"
+                referencedColumnNames="id"/>
+
+        <!-- FK: dict_tags → dict_tags_per_user -->
+        <addForeignKeyConstraint
+                baseTableName="dict_tags"
+                baseColumnNames="dict_tags_per_user_id"
+                constraintName="fk_dict_tags_per_user"
+                referencedTableName="dict_tags_per_user"
+                referencedColumnNames="id"/>
+
+        <!-- FK: dict_tags_category_id → dict_tags_per_user -->
+        <addForeignKeyConstraint
+                baseTableName="dict_tags"
+                baseColumnNames="dict_tags_category_id"
+                constraintName="fk_dict_tags_category"
+                referencedTableName="dict_tags_category"
+                referencedColumnNames="id"/>
+
+        <rollback>
+            <dropTable tableName="dict_tags"/>
+            <dropTable tableName="dict_tags_per_user"/>
+            <dropTable tableName="dict_tags_basic"/>
+            <dropTable tableName="dict_tags_category"/>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

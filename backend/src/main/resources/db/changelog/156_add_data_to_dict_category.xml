@@ -1,0 +1,308 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert dict_category_basic" author="smykalm">
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                035a59b5-3460-4a7f-ae16-84523c63bd41
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "shoulders",
+                    "es": "hombros",
+                    "it": "spalle",
+                    "pl": "ramiona",
+                    "ru": "плечи",
+                    "uk": "плечі"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  af6b9e02-fc32-407a-84b9-d0d63fb71117
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "abdomen",
+                    "es": "abdomen",
+                    "it": "addome",
+                    "pl": "brzuch",
+                    "ru": "живот",
+                    "uk": "живіт"
+                  }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  630bc63b-b7fb-43b9-8208-5e5abd81f87f
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "calf",
+                    "es": "pantorrilla",
+                    "it": "polpaccio",
+                    "pl": "łydka",
+                    "ru": "икра",
+                    "uk": "литка"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  f50db532-92ef-48fa-ac54-4e6d91fe219f
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "stretching",
+                    "es": "estiramiento",
+                    "it": "allungamento",
+                    "pl": "rozciąganie",
+                    "ru": "растяжка",
+                    "uk": "розтяжка"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  56d1befa-b859-4817-ba57-12fe6a77f628
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "mobilization",
+                    "es": "movilización",
+                    "it": "mobilitazione",
+                    "pl": "mobilizacja",
+                    "ru": "мобилизация",
+                    "uk": "мобілізація"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  b2854f1c-d112-437f-9aab-47b398afeb68
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "rolling",
+                    "es": "rodillo",
+                    "it": "rotolamento",
+                    "pl": "rolowanie",
+                    "ru": "роллинг",
+                    "uk": "ролінг"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  1e013f8e-b4bc-4fa9-b856-467475cac4ef
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "legs",
+                    "es": "piernas",
+                    "it": "gambe",
+                    "pl": "nogi",
+                    "ru": "ноги",
+                    "uk": "ноги"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  8b791d3e-4eb9-4dfb-b96e-3db4533116ce
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "biceps",
+                    "es": "bíceps",
+                    "it": "bicipiti",
+                    "pl": "bicepsy",
+                    "ru": "бицепсы",
+                    "uk": "біцепси"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  0067282e-9525-47c0-b293-0a670a7a5b0c
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "triceps",
+                    "es": "tríceps",
+                    "it": "tricipiti",
+                    "pl": "tricepsy",
+                    "ru": "трицепсы",
+                    "uk": "трицепси"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  f9815fc6-963a-4af8-91aa-608bb7ad5f8d
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "chest",
+                    "es": "pecho",
+                    "it": "petto",
+                    "pl": "klatka piersiowa",
+                    "ru": "грудь",
+                    "uk": "груди"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                  1a9f8d1e-8475-4813-8a76-86d5cc034966
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "back",
+                    "es": "espalda",
+                    "it": "schiena",
+                    "pl": "plecy",
+                    "ru": "спина",
+                    "uk": "спина"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description"
+                }
+                ]]>
+            </column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

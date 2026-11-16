@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Step 1: Delete all entries from the table -->
+    <changeSet id="delete-all-entries-from-dict_body_params" author="smykalm">
+        <sql>
+            DELETE FROM dict_body_params;
+        </sql>
+    </changeSet>
+
+    <!-- Step 2: Change column types to jsonb -->
+    <changeSet id="2-change-column-types" author="smykalm">
+        <modifyDataType tableName="dict_body_params" columnName="name" newDataType="jsonb"/>
+        <modifyDataType tableName="dict_body_params" columnName="description" newDataType="jsonb"/>
+    </changeSet>
+
+</databaseChangeLog>

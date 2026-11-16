@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Usunięcie rekordu z dict_equipment -->
+    <changeSet id="delete-from-dict_equipment" author="smykalm">
+        <delete tableName="dict_equipment">
+            <where>id = 'ea867a4e-ecb6-48af-8014-5af4e94b7e4e' AND dict_equipment_basic_id = '9ee877d7-d3f2-456f-a6e8-656551813830'</where>
+        </delete>
+
+
+    <!-- Usunięcie rekordu z dict_equipment_basic -->
+        <delete tableName="dict_equipment_basic">
+            <where>id = '9ee877d7-d3f2-456f-a6e8-656551813830'</where>
+        </delete>
+    </changeSet>
+
+    <!-- Aktualizacja tłumaczenia w dict_equipment_basic -->
+    <changeSet id="update-kettle-to-kettlebell" author="smykalm">
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Kettlebell",
+                    "es": "Pesa rusa",
+                    "it": "Kettlebell",
+                    "pl": "Kettlebell",
+                    "ru": "Гиря",
+                    "ua": "Гиря"
+                }
+                ]]>
+            </column>
+            <where>id = '4f0e0fbb-1ef4-4600-ba1b-54e1002552f4'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

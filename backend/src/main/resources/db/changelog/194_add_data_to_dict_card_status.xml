@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="insert-dict-card-status-001" author="smykalm">
+
+        <!-- Initialized -->
+        <insert tableName="dict_card_status">
+            <column name="id" value="e61edb77-e9e4-41cf-8f68-39d0daf01881"/>
+            <column name="status_name" value='{
+              "en": "Initialized",
+              "pl": "Zainicjowano",
+              "es": "Inicializado",
+              "it": "Inizializzato",
+              "uk": "Ініційовано"
+            }'/>
+        </insert>
+
+        <!-- Send to approve -->
+        <insert tableName="dict_card_status">
+            <column name="id" value="633a89a2-b0ff-4fe3-9510-ace3096d0922"/>
+            <column name="status_name" value='{
+              "en": "Send to approve",
+              "pl": "Wyślij do zatwierdzenia",
+              "es": "Enviar para aprobación",
+              "it": "Invia per approvazione",
+              "uk": "Відправити на затвердження"
+            }'/>
+        </insert>
+
+        <!-- Back to edit -->
+        <insert tableName="dict_card_status">
+            <column name="id" value="46fadc94-d24b-41f3-a4cb-3f0a6bd9c2d7"/>
+            <column name="status_name" value='{
+              "en": "Back to edit",
+              "pl": "Wróć do edycji",
+              "es": "Volver a editar",
+              "it": "Torna a modificare",
+              "uk": "Повернути до редагування"
+            }'/>
+        </insert>
+
+        <!-- Rejected -->
+        <insert tableName="dict_card_status">
+            <column name="id" value="d4995a1a-a980-4d08-aab1-87e71bf3da18"/>
+            <column name="status_name" value='{
+              "en": "Rejected",
+              "pl": "Odrzucono",
+              "es": "Rechazado",
+              "it": "Rifiutato",
+              "uk": "Відхилено"
+            }'/>
+        </insert>
+
+        <!-- Approved -->
+        <insert tableName="dict_card_status">
+            <column name="id" value="ecbe38e9-e266-415f-91b2-fd6dec214a0d"/>
+            <column name="status_name" value='{
+              "en": "Approved",
+              "pl": "Zatwierdzono",
+              "es": "Aprobado",
+              "it": "Approvato",
+              "uk": "Затверджено"
+            }'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

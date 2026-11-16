@@ -1,0 +1,77 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="update_dict_equipment_basic_1" author="smykalm">
+        <!-- Zamiana "Straight bar" na "Dumbell" -->
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Dumbell",
+                    "es": "Mancuerna",
+                    "it": "Manubrio",
+                    "pl": "Hantla",
+                    "ru": "Гантель",
+                    "ua": "Гантель"
+                }
+                ]]>
+            </column>
+            <where>id = 'fa597f66-f323-4ac9-b7f8-98c3c376c125'</where>
+        </update>
+
+        <!-- Zamiana "EZ curl bar" na "Barbell" -->
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Barbell",
+                    "es": "Barra",
+                    "it": "Bilanciere",
+                    "pl": "Sztanga",
+                    "ru": "Штанга",
+                    "ua": "Штанга"
+                }
+                ]]>
+            </column>
+            <where>id = 'e03666d5-4918-4e7d-b69a-8642cba8ba3c'</where>
+        </update>
+
+        <!-- Zamiana "Hex bar" na "Bands" -->
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Bands",
+                    "es": "Bandas",
+                    "it": "Fasce",
+                    "pl": "Gumy",
+                    "ru": "Эспандеры",
+                    "ua": "Гумки"
+                }
+                ]]>
+            </column>
+            <where>id = '96e107dc-ce17-4b86-9fe0-e65737924ea2'</where>
+        </update>
+
+        <!-- Zamiana "Multi-grip bar" na "BOSU" -->
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "BOSU",
+                    "es": "BOSU",
+                    "it": "BOSU",
+                    "pl": "BOSU",
+                    "ru": "BOSU",
+                    "ua": "BOSU"
+                }
+                ]]>
+            </column>
+            <where>id = '48309c8b-5fc7-42d5-a052-4f1ed9ad093b'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

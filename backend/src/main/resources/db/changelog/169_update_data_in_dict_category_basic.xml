@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="update-order-id-in-dict-category-basic" author="smykalm">
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">5</column>
+            <where>id = '035a59b5-3460-4a7f-ae16-84523c63bd41'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">10</column>
+            <where>id = 'af6b9e02-fc32-407a-84b9-d0d63fb71117'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">13</column>
+            <where>id = '630bc63b-b7fb-43b9-8208-5e5abd81f87f'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">3</column>
+            <where>id = 'f50db532-92ef-48fa-ac54-4e6d91fe219f'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">2</column>
+            <where>id = '56d1befa-b859-4817-ba57-12fe6a77f628'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">1</column>
+            <where>id = 'b2854f1c-d112-437f-9aab-47b398afeb68'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">12</column>
+            <where>id = '1e013f8e-b4bc-4fa9-b856-467475cac4ef'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">8</column>
+            <where>id = '8b791d3e-4eb9-4dfb-b96e-3db4533116ce'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">9</column>
+            <where>id = '0067282e-9525-47c0-b293-0a670a7a5b0c'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">6</column>
+            <where>id = 'f9815fc6-963a-4af8-91aa-608bb7ad5f8d'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">7</column>
+            <where>id = '1a9f8d1e-8475-4813-8a76-86d5cc034966'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">11</column>
+            <where>id = '09493a88-460c-40a7-82ab-8caec43aeea3'</where>
+        </update>
+
+        <update tableName="dict_category_basic">
+            <column name="order_id" type="int4">4</column>
+            <where>id = '1cb21a10-6e97-4f1d-bf5d-27956162d8b3'</where>
+        </update>
+
+    </changeSet>
+
+</databaseChangeLog>

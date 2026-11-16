@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="update-card-encrypted-fields-length" author="smykalm">
+        <comment>Zwiększenie długości pól szyfrowanych w tabeli card</comment>
+
+        <modifyDataType
+                tableName="card"
+                columnName="phone"
+                newDataType="nvarchar(100)"/>
+
+        <modifyDataType
+                tableName="card"
+                columnName="mail"
+                newDataType="nvarchar(500)"/>
+
+        <modifyDataType
+                tableName="card"
+                columnName="instagram"
+                newDataType="nvarchar(500)"/>
+
+        <modifyDataType
+                tableName="card"
+                columnName="www"
+                newDataType="nvarchar(500)"/>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert-into-dict_equipment_basic" author="smykalm">
+        <!-- Insert TRX -->
+        <insert tableName="dict_equipment_basic">
+            <column name="id" value="7face19a-df78-4cc1-a37c-4ec9db876f59"/>
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "TRX",
+                    "es": "TRX",
+                    "it": "TRX",
+                    "pl": "TRX",
+                    "ru": "ТРХ",
+                    "ua": "ТРХ"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Insert Box -->
+        <insert tableName="dict_equipment_basic">
+            <column name="id" value="a3ab378c-cfbf-4534-910b-c14ab02343c0"/>
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Box",
+                    "es": "Caja",
+                    "it": "Scatola",
+                    "pl": "Skrzynia",
+                    "ru": "Коробка",
+                    "ua": "Коробка"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Insert Ball -->
+        <insert tableName="dict_equipment_basic">
+            <column name="id" value="0fae3fe1-9eb1-4ae4-8f44-8146d4bdd5b6"/>
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Ball",
+                    "es": "Pelota",
+                    "it": "Palla",
+                    "pl": "Piłka",
+                    "ru": "Мяч",
+                    "ua": "М'яч"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Insert Bar -->
+        <insert tableName="dict_equipment_basic">
+            <column name="id" value="9ee877d7-d3f2-456f-a6e8-656551813830"/>
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Bar",
+                    "es": "Barra",
+                    "it": "Barra",
+                    "pl": "Sztanga",
+                    "ru": "Штанга",
+                    "ua": "Штанга"
+                }
+                ]]>
+            </column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-into-dict_equipment" author="smykalm">
+        <insert tableName="dict_equipment">
+            <column name="id" value="6f7ad2c6-3727-4c48-9f88-525254f0ba09"/>
+            <column name="dict_equipment_basic_id" value="7face19a-df78-4cc1-a37c-4ec9db876f59"/>
+        </insert>
+
+        <insert tableName="dict_equipment">
+            <column name="id" value="328ba06d-14ed-4ef1-a147-4d59d7bac556"/>
+            <column name="dict_equipment_basic_id" value="a3ab378c-cfbf-4534-910b-c14ab02343c0"/>
+        </insert>
+
+        <insert tableName="dict_equipment">
+            <column name="id" value="ddb602ed-509c-4bdd-8b73-c6c2b916b886"/>
+            <column name="dict_equipment_basic_id" value="0fae3fe1-9eb1-4ae4-8f44-8146d4bdd5b6"/>
+        </insert>
+
+        <insert tableName="dict_equipment">
+            <column name="id" value="ea867a4e-ecb6-48af-8014-5af4e94b7e4e"/>
+            <column name="dict_equipment_basic_id" value="9ee877d7-d3f2-456f-a6e8-656551813830"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

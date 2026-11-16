@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert dict_category_basic" author="smykalm">
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                09493a88-460c-40a7-82ab-8caec43aeea3
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "glutes",
+                    "es": "glúteos",
+                    "it": "glutei",
+                    "pl": "pośladki",
+                    "ru": "ягодицы",
+                    "uk": "сідниці"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description of glutes",
+                    "es": "descripción de glúteos",
+                    "it": "descrizione di glutei",
+                    "pl": "opis pośladków",
+                    "ru": "описание ягодиц",
+                    "uk": "опис сідниць"
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                1cb21a10-6e97-4f1d-bf5d-27956162d8b3
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "core",
+                    "es": "core",
+                    "it": "core",
+                    "pl": "core",
+                    "ru": "кор",
+                    "uk": "кор"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description of core",
+                    "es": "descripción de core",
+                    "it": "descrizione di core",
+                    "pl": "opis core",
+                    "ru": "описание кора",
+                    "uk": "опис кора"
+                }
+                ]]>
+            </column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert dict_category" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_category (id, dict_category_basic_id, dict_category_per_user_id)
+            VALUES
+            ('ce656213-0a74-4156-98f0-89476447aee5', '09493a88-460c-40a7-82ab-8caec43aeea3', NULL),
+            ('e5885531-3b3a-4234-84cf-94f1a6ff65e7'::uuid, '1cb21a10-6e97-4f1d-bf5d-27956162d8b3'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Dodanie unikalnych ograniczeń do kolumn 'id' -->
+    <changeSet id="1-add-unique-constraints" author="smykalm">
+        <addUniqueConstraint columnNames="id" tableName="dict_category_basic" constraintName="dict_category_basic_id_unique"/>
+        <addUniqueConstraint columnNames="id" tableName="dict_category_per_user" constraintName="dict_category_per_user_id_unique"/>
+    </changeSet>
+
+    <!-- Przywrócenie kluczy obcych -->
+    <changeSet id="2-add-foreign-keys-back" author="smykalm">
+        <addForeignKeyConstraint baseTableName="dict_exercises_per_user" baseColumnNames="dict_category_id"
+                                 constraintName="fk_dict_exercises_per_user_dict_category" referencedTableName="dict_category"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="dict_exercises_basic" baseColumnNames="dict_category_id"
+                                 constraintName="fk_dict_exercises_basic_dict_category" referencedTableName="dict_category"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="dict_category" baseColumnNames="dict_category_basic_id"
+                                 constraintName="fk_dict_category_basic" referencedTableName="dict_category_basic"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="dict_category" baseColumnNames="dict_category_per_user_id"
+                                 constraintName="fk_dict_category_per_user" referencedTableName="dict_category_per_user"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

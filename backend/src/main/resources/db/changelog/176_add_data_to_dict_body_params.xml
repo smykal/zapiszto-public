@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert_dict_body_params_height" author="smykalm">
+
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Height",
+                    "es": "Altura",
+                    "it": "Altezza",
+                    "pl": "Wzrost",
+                    "ru": "Рост",
+                    "uk": "Зріст"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure your height from the base of your feet to the top of your head.",
+                    "es": "Mide tu altura desde la base de los pies hasta la parte superior de la cabeza.",
+                    "it": "Misura la tua altezza dalla base dei piedi alla cima della testa.",
+                    "pl": "Zmierz swój wzrost od podstawy stóp do czubka głowy.",
+                    "ru": "Измерьте свой рост от основания ступней до макушки головы.",
+                    "uk": "Виміряйте свій зріст від основи ніг до вершини голови."
+                }
+                ]]>
+            </column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

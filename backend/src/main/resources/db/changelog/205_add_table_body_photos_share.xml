@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ================= body_photos_share ================= -->
+    <changeSet id="create-body-photos-share-table" author="smykalm">
+        <createTable tableName="body_photos_share">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="photo_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="int8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                constraintName="fk_body_photos_share_photo"
+                baseTableName="body_photos_share"
+                baseColumnNames="photo_id"
+                referencedTableName="body_photos"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint
+                constraintName="fk_body_photos_share_user"
+                baseTableName="body_photos_share"
+                baseColumnNames="user_id"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <addUniqueConstraint
+                tableName="body_photos_share"
+                columnNames="photo_id, user_id"
+                constraintName="uq_body_photos_share_photo_user"/>
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,159 @@
+package com.zapiszto.controllers.program.sessions.service;
+
+import com.zapiszto.controllers.exercises.service.ExercisesSessionService;
+import com.zapiszto.controllers.program.macrocycle.dto.NewMacrocycleDto;
+import com.zapiszto.controllers.program.mesocycle.entity.MesocycleEntity;
+import com.zapiszto.controllers.program.microcycle.entity.MicrocycleEntity;
+import com.zapiszto.controllers.program.sessions.dto.SessionDto;
+import com.zapiszto.controllers.program.sessions.entity.SessionEntity;
+import com.zapiszto.controllers.program.sessions.exceptions.TooManySessionsException;
+import com.zapiszto.controllers.program.sessions.repository.SessionRepository;
+import com.zapiszto.controllers.program.sessions.serializer.SessionSerializer;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Slf4j
+@Service
+@AllArgsConstructor
+public class SessionService {
+
+  @Autowired
+  SessionRepository sessionRepository;
+
+  @Autowired
+  ExercisesSessionService exercisesSessionService;
+
+  @Transactional
+  public void addSessions(int sessionsForMicrocycle, UUID microcycleId, int sessionDuration) {
+
+    try {
+      int orderId = sessionRepository.findMaxOrderIdByMicrocycleId(microcycleId)
+          .orElse(0);
+
+      for (int i = 0; i < sessionsForMicrocycle; i++) {
+        orderId++;
+        SessionEntity sessionEntity = SessionEntity.builder()
+            .id(UUID.randomUUID())
+            .microcycleId(microcycleId)
+            .orderId(orderId)
+            .label(String.valueOf(sessionDuration))
+            .build();
+        sessionRepository.save(sessionEntity);
+      }
+    } catch (Exception e) {
+      log.error("Error adding sessions for microcycle {}: {}", microcycleId, e.getMessage());
+      throw new RuntimeException("Error adding sessions", e);
+    }
+  }
+
+  public List<SessionDto> getSessions(UUID microcycleId) {
+    List<SessionEntity> sessionsByMicrocycleId = sessionRepository.getSessionsByMicrocycleId(microcycleId);
+    return sessionsByMicrocycleId.stream()
+        .map(SessionSerializer::convert)
+        .collect(Collectors.toList());
+  }
+
+  public List<SessionEntity> getAllSessions() {
+    return sessionRepository.findAll();
+  }
+
+  public Optional<SessionEntity> getSessionById(UUID id) {
+    return sessionRepository.findById(id);
+  }
+
+  public SessionEntity createSession(SessionEntity sessionEntity) {
+    return sessionRepository.save(sessionEntity);
+  }
+
+  public SessionEntity updateSession(UUID id, SessionEntity sessionEntity) {
+    if (sessionRepository.existsById(id)) {
+      sessionEntity.setId(id);
+      return sessionRepository.save(sessionEntity);
+    } else {
+      throw new IllegalArgumentException("Session not found");
+    }
+  }
+
+  @Transactional
+  public void deleteSession(UUID id) {
+    sessionRepository.deleteById(id);
+  }
+
+  public List<SessionEntity> addSessions(MicrocycleEntity microcycleEntity, NewMacrocycleDto newMacrocycleDto) {
+    UUID microcycleId = microcycleEntity.getId();
+    int sessionsForMicrocycle = newMacrocycleDto.getSessionsForMicrocycle();
+    int sessionDuration = newMacrocycleDto.getDurationSession();
+    int orderId = sessionRepository.findMaxOrderIdByMicrocycleId(microcycleId)
+        .orElse(0);
+
+    List<SessionEntity> sessions = new ArrayList<>();
+
+    for (int i = 0; i < sessionsForMicrocycle; i++) {
+      orderId++;
+      SessionEntity sessionEntity = SessionEntity.builder()
+          .id(UUID.randomUUID())
+          .microcycleId(microcycleId)
+          .orderId(orderId)
+          .label(String.valueOf(sessionDuration))
+          .build();
+      sessions.add(sessionEntity);
+    }
+    List<SessionEntity> sessionEntities = sessionRepository.saveAll(sessions);
+    return sessionEntities;
+  }
+
+  public void updateSessionDateTime(UUID id, ZonedDateTime dateTime) {
+    SessionEntity sessionEntity = sessionRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Session not found"));
+    sessionEntity.setDateTime(dateTime);
+    sessionRepository.save(sessionEntity);
+  }
+
+  @Transactional
+  public SessionDto addSession(UUID microcycleId) {
+    int orderId = sessionRepository.findMaxOrderIdByMicrocycleId(microcycleId)
+        .orElse(0);
+
+    if (orderId >= 7) {
+      throw new TooManySessionsException("Too many sessions in week, max sessions in week is 7");
+    }
+
+    SessionEntity sessionEntity = SessionEntity.builder()
+        .id(UUID.randomUUID())
+        .microcycleId(microcycleId)
+        .orderId(orderId+1)
+        .label(String.valueOf(60))
+        .build();
+    SessionEntity save = sessionRepository.save(sessionEntity);
+    addExercisesToSession(save.getId());
+
+    return SessionSerializer.convert(sessionEntity);
+  }
+
+  public UUID addSession(UUID currentSessionId, UUID microcycleId, UUID mesocycleId) {
+
+    var nextMicrocycleId = sessionRepository.getNextMicrocycleId(microcycleId, mesocycleId)
+        .orElseThrow(() -> new IllegalStateException("Next microcycle not found"));
+
+    return sessionRepository.save(SessionEntity.builder()
+        .id(UUID.randomUUID())
+        .microcycleId(nextMicrocycleId)
+        .orderId(sessionRepository.findMaxOrderIdByMicrocycleId(nextMicrocycleId).orElse(0) + 1)
+        .label(String.valueOf(60))
+        .build()).getId();
+  }
+
+  @Transactional
+  protected void addExercisesToSession(UUID sessionId) {
+    exercisesSessionService.addExercise(sessionId);
+  }
+}

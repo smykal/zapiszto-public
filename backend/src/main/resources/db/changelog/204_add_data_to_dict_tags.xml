@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ================= dict_tags_basic ================= -->
+    <changeSet id="insert-dict-tags-basic-01" author="smykalm">
+        <insert tableName="dict_tags_basic">
+            <column name="id" value="9fa07ad2-158f-4a2c-a19d-dae11625232b"/>
+            <column name="name"><![CDATA[
+            {
+              "pl": "Instagramowa dupcia",
+              "en": "Instagram booty",
+              "es": "Trasero de Instagram",
+              "it": "Lato B di Instagram",
+              "uk": "Інстаграмні сідниці"
+            }
+            ]]></column>
+            <column name="description"><![CDATA[
+            {
+              "pl": "Pokazanie pośladków w ramach budowania contentu na media społecznościowe ku zazdrości innych kobiet.",
+              "en": "Showing off one's glutes as part of creating social media content, often to spark envy in others.",
+              "es": "Mostrar los glúteos como parte de la creación de contenido para redes sociales, a menudo para provocar la envidia de otras mujeres.",
+              "it": "Mostrare i glutei come parte della creazione di contenuti per i social media, spesso per suscitare l'invidia di altre donne.",
+              "uk": "Демонстрація сідниць у межах створення контенту для соціальних мереж, часто з метою викликати заздрість інших жінок."
+            }
+            ]]></column>
+        </insert>
+    </changeSet>
+
+    <!-- ================= dict_tags ================= -->
+    <changeSet id="insert-dict-tags-01" author="smykalm">
+        <insert tableName="dict_tags">
+            <column name="id" value="a397b4aa-b44d-40da-a19a-e6dfe7221874"/>
+            <column name="dict_tags_category_id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="dict_tags_basic_id" value="9fa07ad2-158f-4a2c-a19d-dae11625232b"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

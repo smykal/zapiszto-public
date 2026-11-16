@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="insert-dict-tags-category" author="smykalm">
+
+        <!-- body photos -->
+        <insert tableName="dict_tags_category">
+            <column name="id" value="c10d6995-4c72-4ae1-836d-b392d5a7e930"/>
+            <column name="name" value='{
+              "en": "Body Photos",
+              "pl": "Zdjęcia sylwetki",
+              "es": "Fotos corporales",
+              "it": "Foto del corpo",
+              "uk": "Фотографії тіла"
+            }'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

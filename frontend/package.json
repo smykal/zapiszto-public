@@ -1,0 +1,68 @@
+{
+  "name": "react-typescript-login-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "5",
+    "@capacitor/app": "^5.0.8",
+    "@capacitor/cli": "5",
+    "@capacitor/core": "5",
+    "@capacitor/status-bar": "^5.0.8",
+    "@tanstack/react-query": "^5.90.19",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "axios": "^0.27.2",
+    "browser-image-compression": "^2.0.2",
+    "formik": "^2.2.9",
+    "i18next": "^23.11.4",
+    "react": "^18.2.0",
+    "react-collapsible": "^2.10.0",
+    "react-datepicker": "^6.6.0",
+    "react-dom": "^18.2.0",
+    "react-google-charts": "^5.2.1",
+    "react-google-recaptcha": "^3.1.0",
+    "react-i18next": "^14.1.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "react-tabs": "^6.0.2",
+    "recharts": "^2.11.0",
+    "swiper": "^12.0.3",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@types/react-datepicker": "^6.2.0"
+  }
+}

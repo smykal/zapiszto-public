@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1-delete-all-entries" author="smykalm">
+        <sql>
+            DELETE FROM exercises;
+            DELETE FROM dict_exercises;
+            DELETE FROM dict_exercises_basic;
+            DELETE FROM dict_exercises_per_user;
+        </sql>
+        <sql>
+            DELETE FROM dict_category;
+            DELETE FROM dict_category_basic;
+            DELETE FROM dict_category_per_user;
+        </sql>
+    </changeSet>
+
+    <changeSet id="2-drop-foreign-keys" author="smykalm">
+        <dropForeignKeyConstraint baseTableName="dict_exercises_per_user" constraintName="fk_dict_exercises_per_user_dict_category"/>
+        <dropForeignKeyConstraint baseTableName="dict_exercises_basic" constraintName="fk_dict_exercises_basic_dict_category"/>
+        <dropForeignKeyConstraint baseTableName="dict_category" constraintName="fk_dict_category_basic"/>
+        <dropForeignKeyConstraint baseTableName="dict_category" constraintName="fk_dict_category_per_user"/>
+    </changeSet>
+
+    <changeSet id="3-add-uuid-column" author="yourname">
+        <addColumn tableName="dict_category">
+            <column name="uuid_temp" type="uuid" defaultValueComputed="gen_random_uuid()" />
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="4-update-pk-to-uuid" author="yourname">
+        <dropPrimaryKey tableName="dict_category" />
+        <addPrimaryKey columnNames="uuid_temp" tableName="dict_category" constraintName="dict_category_pkey" />
+    </changeSet>
+
+    <changeSet id="5-drop-old-id" author="yourname">
+        <dropColumn columnName="id" tableName="dict_category" />
+    </changeSet>
+
+    <changeSet id="6-rename-uuid-to-id" author="yourname">
+        <renameColumn tableName="dict_category" oldColumnName="uuid_temp" newColumnName="id" columnDataType="uuid" />
+    </changeSet>
+
+    <changeSet id="7-add-uuid-columns" author="smykalm">
+        <addColumn tableName="dict_exercises_basic">
+            <column name="new_id" type="UUID"/>
+        </addColumn>
+        <addColumn tableName="dict_exercises_per_user">
+            <column name="new_id" type="UUID"/>
+        </addColumn>
+        <addColumn tableName="dict_category_basic">
+            <column name="new_id" type="UUID"/>
+        </addColumn>
+        <addColumn tableName="dict_category_per_user">
+            <column name="new_id" type="UUID"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="8-drop-old-id-columns" author="smykalm">
+        <dropColumn columnName="dict_category_id" tableName="dict_exercises_basic"/>
+        <dropColumn columnName="dict_category_id" tableName="dict_exercises_per_user"/>
+        <dropColumn columnName="id" tableName="dict_category_basic"/>
+        <dropColumn columnName="id" tableName="dict_category_per_user"/>
+    </changeSet>
+
+    <changeSet id="9-rename-uuid-columns" author="smykalm">
+        <renameColumn tableName="dict_exercises_basic" oldColumnName="new_id" newColumnName="dict_category_id"/>
+        <renameColumn tableName="dict_exercises_per_user" oldColumnName="new_id" newColumnName="dict_category_id"/>
+        <renameColumn tableName="dict_category_basic" oldColumnName="new_id" newColumnName="id"/>
+        <renameColumn tableName="dict_category_per_user" oldColumnName="new_id" newColumnName="id"/>
+    </changeSet>
+
+    <changeSet id="10-drop-add-foreign-keys" author="smykalm">
+        <dropColumn columnName="dict_category_per_user_id" tableName="dict_category"/>
+        <addColumn tableName="dict_category">
+            <column name="dict_category_per_user_id" type="UUID"/>
+        </addColumn>
+        <dropColumn columnName="dict_category_basic_id" tableName="dict_category"/>
+        <addColumn tableName="dict_category">
+            <column name="dict_category_basic_id" type="UUID"/>
+        </addColumn>
+    </changeSet>
+
+
+</databaseChangeLog>

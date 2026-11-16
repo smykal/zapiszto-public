@@ -1,0 +1,234 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert_dict_body_params" author="smykalm">
+
+        <!-- Inserting values for Weight -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Weight",
+                    "es": "Peso",
+                    "it": "Peso",
+                    "pl": "Waga",
+                    "ru": "Вес",
+                    "uk": "Вага"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure your body weight using a scale.",
+                    "es": "Mide tu peso corporal usando una báscula.",
+                    "it": "Misura il tuo peso corporeo utilizzando una bilancia.",
+                    "pl": "Zmierz swoją wagę za pomocą wagi.",
+                    "ru": "Измерьте свой вес с помощью весов.",
+                    "uk": "Виміряйте свою вагу за допомогою вагів."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Fat -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Fat",
+                    "es": "Grasa",
+                    "it": "Grasso",
+                    "pl": "Tłuszcz",
+                    "ru": "Жир",
+                    "uk": "Жир"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure your body fat percentage using a fat caliper or other method.",
+                    "es": "Mide tu porcentaje de grasa corporal con un calibrador de grasa u otro método.",
+                    "it": "Misura la percentuale di grasso corporeo con un calibro o altro metodo.",
+                    "pl": "Zmierz procent tłuszczu w ciele za pomocą kalipera tłuszczowego lub innej metody.",
+                    "ru": "Измерьте процент жира в теле с помощью калипера или другого метода.",
+                    "uk": "Виміряйте відсоток жиру в тілі за допомогою каліпера або іншого методу."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Chest -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Chest",
+                    "es": "Pecho",
+                    "it": "Petto",
+                    "pl": "Klatka piersiowa",
+                    "ru": "Грудь",
+                    "uk": "Груди"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference around the widest part of your chest.",
+                    "es": "Mide la circunferencia alrededor de la parte más ancha de tu pecho.",
+                    "it": "Misura la circonferenza attorno alla parte più ampia del petto.",
+                    "pl": "Zmierz obwód wokół najszerszej części klatki piersiowej.",
+                    "ru": "Измерьте окружность вокруг самой широкой части груди.",
+                    "uk": "Виміряйте окружність навколо найширшої частини грудей."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Waist -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Waist",
+                    "es": "Cintura",
+                    "it": "Vita",
+                    "pl": "Talia",
+                    "ru": "Талия",
+                    "uk": "Талія"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference at the narrowest part of your waist.",
+                    "es": "Mide la circunferencia en la parte más estrecha de tu cintura.",
+                    "it": "Misura la circonferenza nella parte più stretta della vita.",
+                    "pl": "Zmierz obwód w najwęższej części talii.",
+                    "ru": "Измерьте окружность в самой узкой части талии.",
+                    "uk": "Виміряйте окружність у найвужчій частині талії."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Hip -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Hip",
+                    "es": "Cadera",
+                    "it": "Fianchi",
+                    "pl": "Biodra",
+                    "ru": "Бедра",
+                    "uk": "Стегна"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference at the widest part of your hips.",
+                    "es": "Mide la circunferencia en la parte más ancha de tus caderas.",
+                    "it": "Misura la circonferenza nella parte più ampia dei fianchi.",
+                    "pl": "Zmierz obwód wokół najszerszej części bioder.",
+                    "ru": "Измерьте окружность в самой широкой части бедер.",
+                    "uk": "Виміряйте окружність навколо найширшої частини стегон."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Thigh -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Thigh",
+                    "es": "Muslo",
+                    "it": "Coscia",
+                    "pl": "Udo",
+                    "ru": "Бедро",
+                    "uk": "Стегно"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference at the widest part of your thigh.",
+                    "es": "Mide la circunferencia en la parte más ancha de tu muslo.",
+                    "it": "Misura la circonferenza nella parte più ampia della coscia.",
+                    "pl": "Zmierz obwód wokół najszerszej części uda.",
+                    "ru": "Измерьте окружность в самой широкой части бедра.",
+                    "uk": "Виміряйте окружність навколо найширшої частини стегна."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Arm -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Arm",
+                    "es": "Brazo",
+                    "it": "Braccio",
+                    "pl": "Ramię",
+                    "ru": "Рука",
+                    "uk": "Рука"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference of your entire arm.",
+                    "es": "Mide la circunferencia de todo tu brazo.",
+                    "it": "Misura la circonferenza dell'intero braccio.",
+                    "pl": "Zmierz obwód całego ramienia.",
+                    "ru": "Измерьте окружность всей руки.",
+                    "uk": "Виміряйте окружність всієї руки."
+                }
+                ]]>
+            </column>
+        </insert>
+
+        <!-- Inserting values for Calf -->
+        <insert tableName="dict_body_params">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Calf",
+                    "es": "Pantorrilla",
+                    "it": "Polpaccio",
+                    "pl": "Łydka",
+                    "ru": "Икра",
+                    "uk": "Литка"
+                }
+                ]]>
+            </column>
+            <column name="description" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Measure the circumference at the widest part of your calf.",
+                    "es": "Mide la circunferencia en la parte más ancha de tu pantorrilla.",
+                    "it": "Misura la circonferenza nella parte più ampia del polpaccio.",
+                    "pl": "Zmierz obwód wokół najszerszej części łydki.",
+                    "ru": "Измерьте окружность в самой широкой части икры.",
+                    "uk": "Виміряйте окружність навколо найширшої частини литки."
+                }
+                ]]>
+            </column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

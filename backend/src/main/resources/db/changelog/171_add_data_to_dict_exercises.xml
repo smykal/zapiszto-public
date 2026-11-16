@@ -1,0 +1,478 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add data to dict_exercises_basic overhead press" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="5e8ea3f7-8e8a-4b63-b323-86f9cffd5b97"/>
+            <column name="name" value='{"en": "Overhead Press", "pl": "Wyciskanie sztangi nad głowę"}' type="jsonb"/>
+            <column name="dict_category_id" value="0145acb9-5199-43a1-9d4b-e093abcef949"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('03f8c90f-a07a-4f34-85e1-8f48eb183b63'::uuid, '5e8ea3f7-8e8a-4b63-b323-86f9cffd5b97'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Dumbbell Lateral Raise" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="e32df666-98bb-439e-81d7-fc4a77b47f2a"/>
+            <column name="name" value='{"en": "Dumbbell Lateral Raise", "pl": "Unoszenie sztangielek bokiem w górę"}' type="jsonb"/>
+            <column name="dict_category_id" value="0145acb9-5199-43a1-9d4b-e093abcef949"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('f61be160-f72c-4c47-8ac6-7f5245d2a22f'::uuid, 'e32df666-98bb-439e-81d7-fc4a77b47f2a'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Bent-Over Dumbbell Lateral Raise" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="6488c250-59ad-4966-8416-bf30b6dad87e"/>
+            <column name="name" value='{"en": "Bent-Over Dumbbell Lateral Raise","pl": "Unoszenie sztangielek w opadzie tułowia"}' type="jsonb"/>
+            <column name="dict_category_id" value="0145acb9-5199-43a1-9d4b-e093abcef949"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('712619d3-c580-4f08-a799-7f05a707469b'::uuid, '6488c250-59ad-4966-8416-bf30b6dad87e'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Barbell Upright Row" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="c690aada-9a2d-4e95-a735-a07707c52d2f"/>
+            <column name="name" value='{
+                                            "en": "Barbell Upright Row",
+                                            "pl": "Podciąganie sztangi wzdłuż tułowia"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="0145acb9-5199-43a1-9d4b-e093abcef949"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('a049bbec-3a47-4933-a3cf-a82967bc57cf'::uuid, 'c690aada-9a2d-4e95-a735-a07707c52d2f'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Dumbbell Front Raise" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="981da8cf-53bb-4e64-b05e-92b9bd6e790e"/>
+            <column name="name" value='{
+                                            "en": "Dumbbell Front Raise",
+                                            "pl": "Unoszenie ramion w przód"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="0145acb9-5199-43a1-9d4b-e093abcef949"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('1184304f-5a71-48b8-bb70-e6808991a5db'::uuid, '981da8cf-53bb-4e64-b05e-92b9bd6e790e'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Barbell Bench Press" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="63689cfb-b365-48e0-8ea7-db58fa6848ee"/>
+            <column name="name" value='{
+                                            "en": "Barbell Bench Press",
+                                            "pl": "Wyciskanie sztangi w leżeniu na ławce poziomej"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="f21cb703-0019-4f4f-a4b8-1cd5860cada0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('36488da7-bda7-4597-96e1-3e71888535d0'::uuid, '63689cfb-b365-48e0-8ea7-db58fa6848ee'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Incline Barbell Bench Press" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="ba39e08f-ed74-4dac-8a8f-e7a25a1cb65f"/>
+            <column name="name" value='{
+                                            "en": "Incline Barbell Bench Press",
+                                            "pl": "Wyciskanie sztangi w leżeniu na ławce skośnej w górę"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="f21cb703-0019-4f4f-a4b8-1cd5860cada0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('736f5801-74fe-4be6-8daa-34f22c147343'::uuid, 'ba39e08f-ed74-4dac-8a8f-e7a25a1cb65f'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Decline Barbell Bench Press" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="59b4ed96-95e3-4a0e-a7cf-5573a5d1f715"/>
+            <column name="name" value='{
+                                            "en": "Decline Barbell Bench Press",
+                                            "pl": "Wyciskanie sztangi w leżeniu na ławce skośnej w dół"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="f21cb703-0019-4f4f-a4b8-1cd5860cada0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('cc785160-e265-4ea4-9727-78bbeba84509'::uuid, '59b4ed96-95e3-4a0e-a7cf-5573a5d1f715'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Dumbbell Flyes" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="efe24ae2-b8f5-42a8-a963-66427f721ad8"/>
+            <column name="name" value='{
+                                            "en": "Dumbbell Flyes",
+                                            "pl": "Rozpiętki ze sztangielkami"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="f21cb703-0019-4f4f-a4b8-1cd5860cada0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('451af4b2-5dc9-40bc-8456-d9e33769b39c'::uuid, 'efe24ae2-b8f5-42a8-a963-66427f721ad8'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Push-Ups" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="dd8e37ea-7b4a-48c7-a720-7e4b90d33002"/>
+            <column name="name" value='{
+                                            "en": "Push-Ups",
+                                            "pl": "Pompki"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="f21cb703-0019-4f4f-a4b8-1cd5860cada0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('ef839b4a-9c69-4bf2-8244-c05b4be620e4'::uuid, 'dd8e37ea-7b4a-48c7-a720-7e4b90d33002'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Pull-Ups" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="445a5a25-0cf6-4bff-a6f8-cc5424202c21"/>
+            <column name="name" value='{
+                                            "en": "Pull-Ups",
+                                            "pl": "Podciąganie na drążku"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="19ab80b6-69be-45d0-9b94-96b77ed5ad4d"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('be90b033-a567-4560-af75-b6621af2f0d0'::uuid, '445a5a25-0cf6-4bff-a6f8-cc5424202c21'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Rowing" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="ee0fec59-552d-4048-a17d-69bb88e52dab"/>
+            <column name="name" value='{
+                                            "en": "Rowing",
+                                            "pl": "Wiosłowanie"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="19ab80b6-69be-45d0-9b94-96b77ed5ad4d"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('31b2d67e-4276-40a1-922e-364bd601304b'::uuid, 'ee0fec59-552d-4048-a17d-69bb88e52dab'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Lat Pulldown" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="9a64299d-3bc0-4833-b747-814719b7655b"/>
+            <column name="name" value='{
+                                        "en": "Lat Pulldown",
+                                        "pl": "Przyciąganie linki wyciągu górnego w siadzie"
+                                    }' type="jsonb"/>
+            <column name="dict_category_id" value="19ab80b6-69be-45d0-9b94-96b77ed5ad4d"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('f551ae0a-447d-4448-a8a6-7a071e05e045'::uuid, '9a64299d-3bc0-4833-b747-814719b7655b'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Back Extension" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="c671e589-6010-4290-bbf6-74fbaccbfe73"/>
+            <column name="name" value='{
+                                            "en": "Back Extension",
+                                            "pl": "Unoszenie tułowia z opadu"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="ce656213-0a74-4156-98f0-89476447aee5"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('66d09aac-2f58-4bd5-a9e7-d5b791aae4a3'::uuid, 'c671e589-6010-4290-bbf6-74fbaccbfe73'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Deadlift" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="6254719d-7550-4cd2-b1a1-497e9d0f2cc8"/>
+            <column name="name" value='{
+                                            "en": "Deadlift",
+                                            "pl": "Martwy ciąg"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="ce656213-0a74-4156-98f0-89476447aee5"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('8bb64908-c6bb-4a4e-b6c8-4eaf56ec20b7'::uuid, '6254719d-7550-4cd2-b1a1-497e9d0f2cc8'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic hip thrust" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="396cc18d-0345-4329-9840-af9d4b38811f"/>
+            <column name="name" value='{
+                                            "en": "Hip Thrust",
+                                            "pl": "Wypychanie bioder w górę"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="ce656213-0a74-4156-98f0-89476447aee5"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('f9c944ca-6e05-4c4e-bb7f-d2892667cc43'::uuid, '396cc18d-0345-4329-9840-af9d4b38811f'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Tricep Kickback" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="ee8218ce-194b-47cc-b319-3b4c4a30a540"/>
+            <column name="name" value='{
+                                            "en": "Tricep Kickback",
+                                            "pl": "Kick Back"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="40ee0568-4e30-4cfe-8595-6a51f3800ab0"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('e0c4cfe7-bdc3-475a-961e-12766832e7a5'::uuid, 'ee8218ce-194b-47cc-b319-3b4c4a30a540'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Hammer Raise" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="028a266e-b7f9-436a-99e3-5c6688be7cb1"/>
+            <column name="name" value='{
+                                            "en": "Hammer Curl",
+                                            "pl": "Hammer Curl"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="7be6e76e-bba3-4791-8777-ba5ff0162cae"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('75d3dce6-7cff-4213-ac30-234b92de43e5'::uuid, '028a266e-b7f9-436a-99e3-5c6688be7cb1'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Crunches" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="ae8fc63c-52a5-4657-8e0a-3d1de9117161"/>
+            <column name="name" value='{
+                                            "en": "Crunches",
+                                            "pl": "Skłony w leżeniu płasko"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="11b8f419-2437-466d-8f90-bdc4d999b8bf"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('322b7be1-0f6b-451f-90dd-4967278428d0'::uuid, 'ae8fc63c-52a5-4657-8e0a-3d1de9117161'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Leg Raises" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="6071b4f6-be10-4fd8-adf7-292d868fbe63"/>
+            <column name="name" value='{
+                                            "en": "Leg Raises",
+                                            "pl": "Unoszenie nóg"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="11b8f419-2437-466d-8f90-bdc4d999b8bf"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('fa19a50b-17b4-4172-83ca-287498aa1fa4'::uuid, '6071b4f6-be10-4fd8-adf7-292d868fbe63'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Russian Twists" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="135a2ccd-2feb-410d-9369-bc3c20b4a090"/>
+            <column name="name" value='{
+                                            "en": "Russian Twists",
+                                            "pl": "Skręty tułowia"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="11b8f419-2437-466d-8f90-bdc4d999b8bf"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('83ae0fc7-cdc6-4cf6-b9fd-2d41a3717330'::uuid, '135a2ccd-2feb-410d-9369-bc3c20b4a090'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Scissors" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="4982c002-2e43-4da9-9a61-246250c5cc6c"/>
+            <column name="name" value='{
+                                            "en": "Scissors",
+                                            "pl": "Nożyce"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="11b8f419-2437-466d-8f90-bdc4d999b8bf"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('fd44e857-bff1-40c0-b9b3-bfeadbd12b14'::uuid, '4982c002-2e43-4da9-9a61-246250c5cc6c'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Squats" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="53492caf-5865-4461-aba7-3cc7b55c552c"/>
+            <column name="name" value='{
+                                            "en": "Squats",
+                                            "pl": "Przysiady"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('8809cb06-f0e4-4ed8-a601-e2d658681a6b'::uuid, '53492caf-5865-4461-aba7-3cc7b55c552c'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Leg Extension" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="d84b52f5-c714-464f-aac4-f7b8eef7a6c0"/>
+            <column name="name" value='{
+                                            "en": "Leg Extension",
+                                            "pl": "Prostowanie nóg w siadzie"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('19cfe50a-4d6e-45fd-a1b8-89ec2ff4717f'::uuid, 'd84b52f5-c714-464f-aac4-f7b8eef7a6c0'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Lying Leg Curl" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="34604631-e99e-454a-8c5f-d0190d7b668c"/>
+            <column name="name" value='{
+                                            "en": "Lying Leg Curl",
+                                            "pl": "Uginanie nóg w leżeniu"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('f7b9f2d7-a714-49a2-9e84-4f6aca927db9'::uuid, '34604631-e99e-454a-8c5f-d0190d7b668c'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Lunges" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="05d0d908-ae2d-44b4-957c-a485c55d3f76"/>
+            <column name="name" value='{
+                                            "en": "Lunges",
+                                            "pl": "Przysiady wykroczne"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('d7932c54-dea5-4ee4-abec-e919c3a1d79a'::uuid, '05d0d908-ae2d-44b4-957c-a485c55d3f76'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Leg Abduction" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="81dffce9-34b4-4099-bf0d-2af87811bf76"/>
+            <column name="name" value='{
+                                            "en": "Leg Abduction",
+                                            "pl": "Odwodzenie nogi"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('d6d7e06e-4b39-46b4-89a1-8f82d892d5c4'::uuid, '81dffce9-34b4-4099-bf0d-2af87811bf76'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Leg Abduction in" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="79e3cc62-9fbe-4286-aec1-aca96e758fe2"/>
+            <column name="name" value='{
+                                            "en": "Leg Adduction in",
+                                            "pl": "Przywodzenie nogi do wewnątrz"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('6f5b7fd5-a2cc-4ab3-8eed-004f20c981c3'::uuid, '79e3cc62-9fbe-4286-aec1-aca96e758fe2'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Leg Abduction out" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="81b66d6c-e8b7-454e-8da6-9722866caa03"/>
+            <column name="name" value='{
+                                            "en": "Leg Abduction out",
+                                            "pl": "Odwodzenie nogi na zewnątrz"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="8024053b-010a-4c9c-b55c-4ce9b33322dd"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('c92dff8c-b589-4ed5-be44-4eb2347726af'::uuid, '81b66d6c-e8b7-454e-8da6-9722866caa03'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+    <changeSet id="add data to dict_exercises_basic Calf Raises" author="smykalm">
+        <insert tableName="dict_exercises_basic">
+            <column name="id" value="61ef47a5-7a3a-4273-ab67-f1fe8ea70a7f"/>
+            <column name="name" value='{
+                                            "en": "Calf Raises",
+                                            "pl": "Wspięcia na palce"
+                                        }' type="jsonb"/>
+            <column name="dict_category_id" value="7423e3b4-d2e9-4a21-ba95-d3425af28d1e"/>
+        </insert>
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('249032d5-bb2b-4ec2-bdd8-a118d025bf5b'::uuid, '61ef47a5-7a3a-4273-ab67-f1fe8ea70a7f'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

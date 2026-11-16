@@ -1,0 +1,48 @@
+
+.mySwiper {
+  width: 100%;
+  max-width: 250px;              /* Swiper wypełnia cały rodzic */
+  height: auto;             /* wysokość zależna od zawartości */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #fff;        /* kolor ikon (fiolet) lub użyj #fff dla białych) */
+  background: rgba(0,0,0,0.2);
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  box-shadow: none;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* większy obszar klikalny */
+.mySwiper .swiper-button-next::after,
+.mySwiper .swiper-button-prev::after {
+  font-size: 3rem;
+}
+
+/* opcjonalnie zmień kolor tła strzałek na widoczny na ciemnym tle */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  background-color: rgba(255,255,255,0.04);
+}
+
+/* pagination bullet style (jeśli używasz) */
+.mySwiper .swiper-pagination-bullet {
+  background: rgba(255,255,255,0.3);
+}
+.mySwiper .swiper-pagination-bullet-active {
+  background: #800080;
+}

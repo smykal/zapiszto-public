@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- Tworzenie słownika statusów wizytówek -->
+    <changeSet id="create-dict_card_status" author="smykalm">
+        <createTable tableName="dict_card_status">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="status_name" type="jsonb"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Tworzenie tabeli card_status -->
+    <changeSet id="create-card_status" author="smykalm">
+        <createTable tableName="card_status">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="card_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_card_status_card"
+                             references="card(id)"/>
+            </column>
+
+            <column name="datetime" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="dict_card_status_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_card_status_dict_card_status"
+                             references="dict_card_status(id)"/>
+            </column>
+
+            <column name="comment" type="varchar(300)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

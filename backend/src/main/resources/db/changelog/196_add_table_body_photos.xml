@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="add-body-photos-table" author="your_name">
+        <createTable tableName="body_photos">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="user_id" type="int8" remarks="who is on photo">
+                <constraints nullable="false" foreignKeyName="fk_body_photos_user"
+                             referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+
+            <column name="created_by" type="int8" remarks="who upload photo">
+                <constraints nullable="false" foreignKeyName="fk_body_photos_created_by"
+                             referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+
+            <column name="date" type="date">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="photo_url" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="bytes" type="int8">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="order_number" type="int4"/>
+
+            <column name="share" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <createIndex indexName="idx_body_photos_user_id" tableName="body_photos">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+
+</databaseChangeLog>

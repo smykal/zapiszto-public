@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <changeSet id="2026-01-10-body-photos-photo-name-folder" author="smykalm">
+
+        <!-- Rename column photo_url -> photo_name -->
+        <renameColumn
+                tableName="body_photos"
+                oldColumnName="photo_url"
+                newColumnName="photo_name"
+                columnDataType="varchar(200)"/>
+
+        <!-- Add new column photo_folder -->
+        <addColumn tableName="body_photos">
+            <column name="photo_folder" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
+
+</databaseChangeLog>

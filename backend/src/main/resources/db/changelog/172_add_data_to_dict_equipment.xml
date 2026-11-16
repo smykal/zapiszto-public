@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert-into-dict_equipment_basic" author="smykalm">
+        <!-- Insert Gym machine -->
+        <insert tableName="dict_equipment_basic">
+            <column name="id" value="9a20d624-535a-44df-986f-213c94ab9c8a"/>
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Gym machine",
+                    "es": "Máquina de gimnasio",
+                    "it": "Macchina da palestra",
+                    "pl": "Maszyna do ćwiczeń",
+                    "ru": "Тренажер",
+                    "ua": "Тренажер"
+                }
+                ]]>
+            </column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-into-dict_equipment" author="smykalm">
+        <!-- Insert Gym machine -->
+        <insert tableName="dict_equipment">
+            <column name="id" value="94709dc1-a4a3-40a8-8821-931cb463bd5d"/>
+            <column name="dict_equipment_basic_id" value="9a20d624-535a-44df-986f-213c94ab9c8a"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

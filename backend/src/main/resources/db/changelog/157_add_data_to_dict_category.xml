@@ -1,0 +1,26 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert dict_category" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_category (id, dict_category_basic_id, dict_category_per_user_id)
+            VALUES
+            ('0145acb9-5199-43a1-9d4b-e093abcef949', '035a59b5-3460-4a7f-ae16-84523c63bd41', NULL),
+            ('11b8f419-2437-466d-8f90-bdc4d999b8bf'::uuid, 'af6b9e02-fc32-407a-84b9-d0d63fb71117'::uuid, NULL),
+            ('7423e3b4-d2e9-4a21-ba95-d3425af28d1e'::uuid, '630bc63b-b7fb-43b9-8208-5e5abd81f87f'::uuid, NULL),
+            ('b6bdec42-a0c2-4d55-9b5e-9a971b94f149'::uuid, 'f50db532-92ef-48fa-ac54-4e6d91fe219f'::uuid, NULL),
+            ('fb063f03-1669-4661-b576-49fac6a367eb'::uuid, '56d1befa-b859-4817-ba57-12fe6a77f628'::uuid, NULL),
+            ('47e8736e-8a43-4bc7-9682-f7464bd3a2b1'::uuid, 'b2854f1c-d112-437f-9aab-47b398afeb68'::uuid, NULL),
+            ('d00e62f2-3030-4e14-84a2-a3ded72d7fa0'::uuid, 'b2854f1c-d112-437f-9aab-47b398afeb68'::uuid, NULL),
+            ('8024053b-010a-4c9c-b55c-4ce9b33322dd'::uuid, '1e013f8e-b4bc-4fa9-b856-467475cac4ef'::uuid, NULL),
+            ('7be6e76e-bba3-4791-8777-ba5ff0162cae'::uuid, '8b791d3e-4eb9-4dfb-b96e-3db4533116ce'::uuid, NULL),
+            ('40ee0568-4e30-4cfe-8595-6a51f3800ab0'::uuid, '0067282e-9525-47c0-b293-0a670a7a5b0c'::uuid, NULL),
+            ('f21cb703-0019-4f4f-a4b8-1cd5860cada0'::uuid, 'f9815fc6-963a-4af8-91aa-608bb7ad5f8d'::uuid, NULL),
+            ('19ab80b6-69be-45d0-9b94-96b77ed5ad4d'::uuid, '1a9f8d1e-8475-4813-8a76-86d5cc034966'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

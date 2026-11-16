@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="insert-dict-country-001" author="smykalm">
+
+        <!-- Poland -->
+        <insert tableName="dict_country">
+            <column name="id" value="8e5b60dc-b17f-4018-8155-c2ef76060fa6"/>
+            <column name="country_name" value='{
+              "en": "Poland",
+              "pl": "Polska",
+              "es": "Polonia",
+              "it": "Polonia",
+              "uk": "Польща"
+            }'/>
+            <column name="country_code" value='{
+              "en": "PL",
+              "pl": "PL",
+              "es": "PL",
+              "it": "PL",
+              "uk": "PL"
+            }'/>
+        </insert>
+
+        <!-- England -->
+        <insert tableName="dict_country">
+            <column name="id" value="cb74ffff-6196-4bb9-bf21-358e0460b1c4"/>
+            <column name="country_name" value='{
+              "en": "England",
+              "pl": "Anglia",
+              "es": "Inglaterra",
+              "it": "Inghilterra",
+              "uk": "Англія"
+            }'/>
+            <column name="country_code" value='{
+              "en": "GB",
+              "pl": "GB",
+              "es": "GB",
+              "it": "GB",
+              "uk": "GB"
+            }'/>
+        </insert>
+
+        <!-- Spain -->
+        <insert tableName="dict_country">
+            <column name="id" value="7117ebec-6138-4fa9-82af-eaaf9a2fd77c"/>
+            <column name="country_name" value='{
+              "en": "Spain",
+              "pl": "Hiszpania",
+              "es": "España",
+              "it": "Spagna",
+              "uk": "Іспанія"
+            }'/>
+            <column name="country_code" value='{
+              "en": "ES",
+              "pl": "ES",
+              "es": "ES",
+              "it": "ES",
+              "uk": "ES"
+            }'/>
+        </insert>
+
+        <!-- Italy -->
+        <insert tableName="dict_country">
+            <column name="id" value="8c7d9094-0596-4ade-b5c5-641e0acff7a9"/>
+            <column name="country_name" value='{
+              "en": "Italy",
+              "pl": "Włochy",
+              "es": "Italia",
+              "it": "Italia",
+              "uk": "Італія"
+            }'/>
+            <column name="country_code" value='{
+              "en": "IT",
+              "pl": "IT",
+              "es": "IT",
+              "it": "IT",
+              "uk": "IT"
+            }'/>
+        </insert>
+
+        <!-- Ukraine -->
+        <insert tableName="dict_country">
+            <column name="id" value="61c8429b-1b2a-4f3b-9bea-0d9991454927"/>
+            <column name="country_name" value='{
+              "en": "Ukraine",
+              "pl": "Ukraina",
+              "es": "Ucrania",
+              "it": "Ucraina",
+              "uk": "Україна"
+            }'/>
+            <column name="country_code" value='{
+              "en": "UA",
+              "pl": "UA",
+              "es": "UA",
+              "it": "UA",
+              "uk": "UA"
+            }'/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

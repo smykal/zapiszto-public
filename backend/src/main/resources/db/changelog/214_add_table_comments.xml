@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <changeSet id="create-comments-table" author="smykal">
+
+        <createTable tableName="comments">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="entity_origin" type="nvarchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="entity_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="author_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="content" type="nvarchar(500)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_at" type="datetime2">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Foreign Key -->
+        <addForeignKeyConstraint
+                baseTableName="comments"
+                baseColumnNames="author_id"
+                constraintName="fk_comments_users"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <!-- Indeksy pod wydajność -->
+        <createIndex tableName="comments" indexName="idx_comments_entity">
+            <column name="entity_origin"/>
+            <column name="entity_id"/>
+        </createIndex>
+
+        <createIndex tableName="comments" indexName="idx_comments_created_at">
+            <column name="created_at"/>
+        </createIndex>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- ======================================= -->
+    <!-- 1️⃣ CREATE TABLE: dict_country -->
+    <!-- ======================================= -->
+    <changeSet id="001-create-dict-country" author="smykalm">
+        <createTable tableName="dict_country">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="country_name" type="jsonb"/>
+            <column name="country_code" type="jsonb"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ======================================= -->
+    <!-- 2️⃣ CREATE TABLE: card -->
+    <!-- ======================================= -->
+    <changeSet id="002-create-card" author="smykalm">
+        <createTable tableName="card">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="fk_card_user"
+                             referencedTableName="users"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <column name="tittle" type="nvarchar(50)"/>
+            <column name="description" type="nvarchar(300)"/>
+            <column name="experience" type="nvarchar(300)"/>
+            <column name="phone" type="nvarchar(15)"/>
+            <column name="mail" type="nvarchar(255)"/>
+            <column name="instagram" type="nvarchar(255)"/>
+            <column name="www" type="nvarchar(255)"/>
+            <column name="online" type="boolean" defaultValueBoolean="false"/>
+        </createTable>
+
+        <!-- Index to optimize lookups by user -->
+        <createIndex indexName="idx_card_user_id" tableName="card">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+
+    <!-- ======================================= -->
+    <!-- 3️⃣ CREATE TABLE: card_addresses -->
+    <!-- ======================================= -->
+    <changeSet id="003-create-card-addresses" author="smykalm">
+        <createTable tableName="card_addresses">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <!-- Relacja N:1 do card -->
+            <column name="card_id" type="uuid">
+                <constraints nullable="false"
+                             foreignKeyName="fk_card_addresses_card"
+                             referencedTableName="card"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <!-- Relacja N:1 do dict_country -->
+            <column name="dict_country_id" type="uuid">
+                <constraints nullable="false"
+                             foreignKeyName="fk_card_addresses_country"
+                             referencedTableName="dict_country"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <column name="city" type="nvarchar(100)"/>
+            <column name="gym_name" type="nvarchar(100)"/>
+            <column name="gym_address" type="nvarchar(200)"/>
+        </createTable>
+
+        <!-- Index to speed up lookups by card -->
+        <createIndex indexName="idx_card_addresses_card_id" tableName="card_addresses">
+            <column name="card_id"/>
+        </createIndex>
+
+        <!-- Index to speed up lookups by country -->
+        <createIndex indexName="idx_card_addresses_country_id" tableName="card_addresses">
+            <column name="dict_country_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

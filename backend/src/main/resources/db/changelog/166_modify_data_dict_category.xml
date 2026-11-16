@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="delete-dict-category-entry" author="smykalm">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*)
+                FROM dict_category
+                WHERE id='d00e62f2-3030-4e14-84a2-a3ded72d7fa0'
+            </sqlCheck>
+        </preConditions>
+        <delete tableName="dict_category">
+            <where>id='d00e62f2-3030-4e14-84a2-a3ded72d7fa0'</where>
+        </delete>
+    </changeSet>
+
+</databaseChangeLog>

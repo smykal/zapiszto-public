@@ -1,0 +1,89 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="set description to null" author="smykalm">
+        <sql>
+            UPDATE public.dict_workbook_schema SET description=null;
+        </sql>
+    </changeSet>
+
+    <changeSet id="temporary change datatype in dict_workbook_schema" author="smykalm">
+        <modifyDataType tableName="dict_workbook_schema" columnName="name" newDataType="varchar"/>
+        <modifyDataType tableName="dict_workbook_schema" columnName="description" newDataType="varchar"/>
+    </changeSet>
+
+    <changeSet id="input json warm up" author="smykalm">
+        <update tableName="dict_workbook_schema">
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "no schema",
+                    "es": "sin esquema",
+                    "it": "nessun schema",
+                    "pl": "brak schematu",
+                    "ru": "нет схемы",
+                    "ua": "немає схеми"
+                }
+                ]]>
+            </column>
+            <where>id = '1'</where>
+        </update>
+        <update tableName="dict_workbook_schema">
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "no description",
+                    "es": "sin descripción",
+                    "it": "nessuna descrizione",
+                    "pl": "brak opisu",
+                    "ru": "нет описания",
+                    "ua": "немає опису"
+                }
+                ]]>
+            </column>
+            <where>id = '1'</where>
+        </update>
+        <update tableName="dict_workbook_schema">
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "basic schema",
+                    "es": "esquema básico",
+                    "it": "schema di base",
+                    "pl": "podstawowy schemat",
+                    "ru": "базовая схема",
+                    "ua": "базова схема"
+                }
+                ]]>
+            </column>
+            <where>id = '2'</where>
+        </update>
+        <update tableName="dict_workbook_schema">
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "no description",
+                    "es": "sin descripción",
+                    "it": "nessuna descrizione",
+                    "pl": "brak opisu",
+                    "ru": "нет описания",
+                    "ua": "немає опису"
+                }
+                ]]>
+            </column>
+            <where>id = '2'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="finaly change datatype" author="smykalm">
+        <modifyDataType tableName="dict_workbook_schema" columnName="name" newDataType="jsonb"/>
+    </changeSet>
+
+    <changeSet id="finaly change datatype for jsonb" author="smykalm">
+        <modifyDataType tableName="dict_workbook_schema" columnName="description" newDataType="jsonb"/>
+    </changeSet>
+
+</databaseChangeLog>

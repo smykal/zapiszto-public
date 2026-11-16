@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "pl.zapiszto.app",
+      "sha256_cert_fingerprints": [
+        "23:1B:F0:46:EE:3E:19:61:DC:BE:5E:A6:B0:2B:3A:07:CC:B5:5C:7D:29:E9:89:52:F3:33:51:7D:BA:3F:62:21"
+      ]
+    }
+  }
+]

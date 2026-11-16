@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <changeSet id="2026-01-12-fix-exercises-pk" author="smykalm">
+        <!-- upewnij się, że id nie ma nulli -->
+        <addNotNullConstraint
+                tableName="exercises"
+                columnName="id"
+                columnDataType="uuid"/>
+
+        <!-- dodaj primary key -->
+        <addPrimaryKey
+                tableName="exercises"
+                columnNames="id"
+                constraintName="pk_exercises"/>
+    </changeSet>
+</databaseChangeLog>

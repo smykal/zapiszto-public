@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="add data to dict_units cm" author="smykalm">
+        <insert tableName="dict_units_basic">
+            <column name="id" value="1f0b3b60-7386-4b7b-b95e-4cf06b65a4f4"/>
+            <column name="name" value='{
+                                    "en": "Centimeter",
+                                    "es": "Centímetro",
+                                    "it": "Centimetro",
+                                    "pl": "Centymetr",
+                                    "ru": "Сантиметр",
+                                    "ua": "Сантиметр"
+                                }' type="jsonb"/>
+            <column name="shortcut" value='{
+                                    "en": "cm",
+                                    "es": "cm",
+                                    "it": "cm",
+                                    "pl": "cm",
+                                    "ru": "см",
+                                    "ua": "см"
+                                }' type="jsonb"/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_units (id, dict_units_basic_id, dict_units_per_user_id)
+            VALUES
+            ('73511bf0-e200-4445-970c-46b991001725'::uuid, '1f0b3b60-7386-4b7b-b95e-4cf06b65a4f4'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

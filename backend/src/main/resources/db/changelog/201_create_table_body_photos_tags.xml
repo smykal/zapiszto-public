@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="create-body-photos-tags-table" author="smykalm">
+
+        <createTable tableName="body_photos_tags">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="body_photo_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="dict_tags_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- FK: body_photos_tags → body_photos -->
+        <addForeignKeyConstraint
+                baseTableName="body_photos_tags"
+                baseColumnNames="body_photo_id"
+                constraintName="fk_body_photos_tags_body_photo"
+                referencedTableName="body_photos"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <!-- FK: body_photos_tags → dict_tags -->
+        <addForeignKeyConstraint
+                baseTableName="body_photos_tags"
+                baseColumnNames="dict_tags_id"
+                constraintName="fk_body_photos_tags_dict_tags"
+                referencedTableName="dict_tags"
+                referencedColumnNames="id"
+                onDelete="CASCADE"/>
+
+        <!-- Optional: prevent duplicates -->
+        <addUniqueConstraint
+                tableName="body_photos_tags"
+                columnNames="body_photo_id, dict_tags_id"
+                constraintName="uk_body_photos_tags_unique"/>
+
+        <rollback>
+            <dropTable tableName="body_photos_tags"/>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>

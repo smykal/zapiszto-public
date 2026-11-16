@@ -1,0 +1,120 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="update-body-tests-purpose" author="smykalm">
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Mobility",
+                "pl": "Mobilność",
+                "es": "Movilidad",
+                "it": "Mobilità",
+                "ru": "Мобильность",
+                "ua": "Мобільність"
+                }
+            </column>
+            <where>id = 'bb62a4dd-cc11-4c65-96c3-2a2e253b17aa'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Mobility",
+                "pl": "Mobilność",
+                "es": "Movilidad",
+                "it": "Mobilità",
+                "ru": "Мобильность",
+                "ua": "Мобільність"
+                }
+            </column>
+            <where>id = '0d1eec27-f669-4231-9d6d-db5ff6149b0f'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Strength",
+                "pl": "Siła",
+                "es": "Fuerza",
+                "it": "Forza",
+                "ru": "Сила",
+                "ua": "Сила"
+                }
+            </column>
+            <where>id = 'c5f98a3e-c788-4a50-966c-a2af5cf0c8f3'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Strength",
+                "pl": "Siła",
+                "es": "Fuerza",
+                "it": "Forza",
+                "ru": "Сила",
+                "ua": "Сила"
+                }
+            </column>
+            <where>id = '6c08dc5e-3d35-4e5f-ad79-2d30565d3f36'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Balance",
+                "pl": "Równowaga",
+                "es": "Equilibrio",
+                "it": "Equilibrio",
+                "ru": "Баланс",
+                "ua": "Баланс"
+                }
+            </column>
+            <where>id = '03fabe59-b7ca-487c-9e81-d57b43ad3cda'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Balance",
+                "pl": "Równowaga",
+                "es": "Equilibrio",
+                "it": "Equilibrio",
+                "ru": "Баланс",
+                "ua": "Баланс"
+                }
+            </column>
+            <where>id = 'd0a5fe98-6471-4239-9ccb-eedfa022626e'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Endurance",
+                "pl": "Wydolność",
+                "es": "Resistencia",
+                "it": "Resistenza",
+                "ru": "Выносливость",
+                "ua": "Витривалість"
+                }
+            </column>
+            <where>id = '0930e46b-e384-4a3e-bd03-e05504298b60'</where>
+        </update>
+
+        <update tableName="dict_body_test_basic">
+            <column name="purpose" type="jsonb">
+                {
+                "en": "Endurance",
+                "pl": "Wydolność",
+                "es": "Resistencia",
+                "it": "Resistenza",
+                "ru": "Выносливость",
+                "ua": "Витривалість"
+                }
+            </column>
+            <where>id = '83742aa5-bf6c-49b5-a112-9815724e6411'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

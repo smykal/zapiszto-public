@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="body-photos-date-remarks-and-upload-date" author="smykalm">
+
+        <setColumnRemarks
+                tableName="body_photos"
+                columnName="date"
+                remarks="date when photo was taken"/>
+
+        <addColumn tableName="body_photos">
+            <column name="upload_date"
+                    type="timestamp"
+                    defaultValueComputed="CURRENT_TIMESTAMP"
+                    remarks="date when photo was uploaded">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

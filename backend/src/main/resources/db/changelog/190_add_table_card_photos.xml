@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="add-card-photos-table" author="yourname">
+        <createTable tableName="card_photos">
+            <column name="id" type="uuid" defaultValueComputed="gen_random_uuid()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="card_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_card_photos_card"
+                             references="public.card(id)"/>
+            </column>
+
+            <column name="photo_url" type="nvarchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="order_number" type="int"/>
+        </createTable>
+
+        <createIndex tableName="card_photos" indexName="idx_card_photos_card_id">
+            <column name="card_id"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

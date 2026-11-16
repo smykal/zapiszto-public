@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert dict_exercises_basic" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_exercises_basic (id, name, dict_category_id)
+            VALUES
+            ('05faca61-761a-49e4-a97c-58794acdba8e',
+            '{
+            "en": "bench press",
+            "es": "press de banca",
+            "it": "distensione su panca",
+            "pl": "wyciskanie na ławce",
+            "ru": "жим лежа",
+            "uk": "жим лежачи"
+            }',
+            'f21cb703-0019-4f4f-a4b8-1cd5860cada0');
+        </sql>
+    </changeSet>
+
+    <changeSet id="insert dict_exercises" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_exercises (id, dict_exercises_basic_id, dict_exercises_per_user_id)
+            VALUES
+            ('0c1f878e-661a-485d-90ea-376d31f46e9b', '05faca61-761a-49e4-a97c-58794acdba8e', NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

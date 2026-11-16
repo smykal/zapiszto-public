@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert dict_category_basic" author="smykalm">
+        <insert tableName="dict_category_basic">
+            <column name="id" type="uuid">
+                <![CDATA[
+                ac3ecc51-5a5c-4b49-a9e3-a1a3505f9654
+                ]]>
+            </column>
+            <column name="name" type="varchar">
+                <![CDATA[
+                {
+                    "en": "cool down",
+                    "es": "enfriamiento",
+                    "it": "defaticamento",
+                    "pl": "schładzanie",
+                    "ru": "заминка",
+                    "uk": "заминка"
+                }
+                ]]>
+            </column>
+            <column name="description" type="varchar">
+                <![CDATA[
+                {
+                    "en": "description",
+                    "es": "descripción",
+                    "it": "descrizione",
+                    "pl": "opis",
+                    "ru": "описание",
+                    "uk": "опис"
+                }
+                ]]>
+            </column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert dict_category" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_category (id, dict_category_basic_id, dict_category_per_user_id)
+            VALUES
+            ('3a58a55b-aefd-4199-8d15-a1a737f75a4f'::uuid, 'ac3ecc51-5a5c-4b49-a9e3-a1a3505f9654'::uuid, NULL);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

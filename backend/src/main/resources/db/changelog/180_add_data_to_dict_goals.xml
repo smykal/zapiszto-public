@@ -1,0 +1,220 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="insert-body-tests-basic" author="smykalm">
+        <!-- Mobilność -->
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="bb62a4dd-cc11-4c65-96c3-2a2e253b17aa"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Overhead Squat Test",
+            "pl": "Przysiad z rękami nad głową",
+            "es": "Sentadilla con brazos elevados",
+            "it": "Squat con le braccia alzate",
+            "ru": "Приседания с руками над головой",
+            "ua": "Присідання з руками над головою"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Assesses mobility and stability of the entire kinetic chain.",
+            "pl": "Ocena mobilności i stabilności całego łańcucha kinetycznego.",
+            "es": "Evalúa la movilidad y estabilidad de toda la cadena cinética.",
+            "it": "Valuta la mobilità e la stabilità dell intera catena cinetica.",
+            "ru": "Оценка подвижности и стабильности всей кинетической цепи.",
+            "ua": "Оцінка рухливості та стабільності всього кінетичного ланцюга."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('3a1cc307-157e-48d7-b600-6f90b421fd65'::uuid, 'bb62a4dd-cc11-4c65-96c3-2a2e253b17aa'::uuid, NULL);
+        </sql>
+
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="0d1eec27-f669-4231-9d6d-db5ff6149b0f"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Active Straight Leg Raise",
+            "pl": "Aktywne uniesienie prostej nogi",
+            "es": "Elevación activa de pierna recta",
+            "it": "Sollevamento attivo della gamba dritta",
+            "ru": "Активный подъём прямой ноги",
+            "ua": "Активне підняття прямої ноги"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Evaluates hamstring and hip mobility.",
+            "pl": "Ocena mobilności ścięgien podkolanowych i bioder.",
+            "es": "Evalúa la movilidad de los isquiotibiales y la cadera.",
+            "it": "Valuta la mobilità degli ischiocrurali e dellanca.",
+            "ru": "Оценка подвижности подколенных сухожилий и тазобедренного сустава.",
+            "ua": "Оцінка рухливості підколінних сухожиль і кульшового суглоба."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('8ef89b38-413e-4b09-bded-e32f2028a385'::uuid, '0d1eec27-f669-4231-9d6d-db5ff6149b0f'::uuid, NULL);
+        </sql>
+
+        <!-- Siła/wytrzymałość -->
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="c5f98a3e-c788-4a50-966c-a2af5cf0c8f3"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Plank Test",
+            "pl": "Test deski",
+            "es": "Prueba de plancha",
+            "it": "Test della plank",
+            "ru": "Тест планки",
+            "ua": "Тест планки"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Measures core endurance by holding a plank position.",
+            "pl": "Pomiar wytrzymałości mięśni korpusu w pozycji deski.",
+            "es": "Mide la resistencia del core en posición de plancha.",
+            "it": "Misura la resistenza del core in posizione di plank.",
+            "ru": "Измерение выносливости корпуса в планке.",
+            "ua": "Вимірювання витривалості корпусу в планці."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('9f5ed60f-4cfc-4185-bdc1-00334a39ba58'::uuid, 'c5f98a3e-c788-4a50-966c-a2af5cf0c8f3'::uuid, NULL);
+        </sql>
+
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="6c08dc5e-3d35-4e5f-ad79-2d30565d3f36"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Push-Up Test (1 minute)",
+            "pl": "Test pompek (1 minuta)",
+            "es": "Prueba de flexiones (1 minuto)",
+            "it": "Test di piegamenti (1 minuto)",
+            "ru": "Тест отжиманий (1 минута)",
+            "ua": "Тест віджимань (1 хвилина)"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Assesses upper body muscular endurance.",
+            "pl": "Ocena wytrzymałości mięśni górnej części ciała.",
+            "es": "Evalúa la resistencia muscular de la parte superior del cuerpo.",
+            "it": "Valuta la resistenza muscolare della parte superiore del corpo.",
+            "ru": "Оценка выносливости мышц верхней части тела.",
+            "ua": "Оцінка витривалості м язів верхньої частини тіла."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('e96430a3-0956-4eb4-ab05-fa14bd65215f'::uuid, '6c08dc5e-3d35-4e5f-ad79-2d30565d3f36'::uuid, NULL);
+        </sql>
+
+        <!-- Równowaga/koordynacja -->
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="03fabe59-b7ca-487c-9e81-d57b43ad3cda"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Single Leg Balance",
+            "pl": "Stanie na jednej nodze",
+            "es": "Equilibrio con una pierna",
+            "it": "Equilibrio su una gamba",
+            "ru": "Баланс на одной ноге",
+            "ua": "Баланс на одній нозі"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Assesses static balance and proprioception.",
+            "pl": "Ocena równowagi statycznej i propriocepcji.",
+            "es": "Evalúa el equilibrio estático y la propiocepción.",
+            "it": "Valuta l equilibrio statico e la propriocezione.",
+            "ru": "Оценка статического равновесия и проприоцепции.",
+            "ua": "Оцінка статичної рівноваги та пропріоцепції."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('13c44d06-9593-47a9-9a90-4dc47c0032bd'::uuid, '03fabe59-b7ca-487c-9e81-d57b43ad3cda'::uuid, NULL);
+        </sql>
+
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="d0a5fe98-6471-4239-9ccb-eedfa022626e"/>
+            <column name="name" type="jsonb" value='{
+            "en": "Y-Balance Test",
+            "pl": "Test Y-Balance",
+            "es": "Prueba de equilibrio en Y",
+            "it": "Test di equilibrio a Y",
+            "ru": "Тест Y-Balance",
+            "ua": "Тест Y-Balance"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Dynamic balance test used to assess symmetry and control.",
+            "pl": "Test równowagi dynamicznej służący do oceny symetrii i kontroli.",
+            "es": "Prueba de equilibrio dinámico para evaluar simetría y control.",
+            "it": "Test di equilibrio dinamico per valutare simmetria e controllo.",
+            "ru": "Динамический тест равновесия для оценки симметрии и контроля.",
+            "ua": "Динамічний тест рівноваги для оцінки симетрії та контролю."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('6c3b14f2-c635-4ba3-8267-47960831d81f'::uuid, 'd0a5fe98-6471-4239-9ccb-eedfa022626e'::uuid, NULL);
+        </sql>
+
+        <!-- Wydolność -->
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="0930e46b-e384-4a3e-bd03-e05504298b60"/>
+            <column name="name" type="jsonb" value='{
+            "en": "3-Minute Step Test",
+            "pl": "3-minutowy test stepowy",
+            "es": "Prueba de escalón de 3 minutos",
+            "it": "Test step di 3 minuti",
+            "ru": "3-минутный степ-тест",
+            "ua": "3-хвилинний степ-тест"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Assesses cardiovascular fitness through recovery heart rate.",
+            "pl": "Ocena wydolności układu krążenia poprzez tętno po wysiłku.",
+            "es": "Evalúa la forma cardiovascular mediante la frecuencia cardíaca de recuperación.",
+            "it": "Valuta la forma cardiovascolare tramite la frequenza cardiaca di recupero.",
+            "ru": "Оценка сердечно-сосудистой выносливости по восстановлению пульса.",
+            "ua": "Оцінка серцево-судинної витривалості за частотою пульсу після навантаження."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('798d5cc1-7adb-4bba-afa9-e89b03888b2b'::uuid, '0930e46b-e384-4a3e-bd03-e05504298b60'::uuid, NULL);
+        </sql>
+
+        <insert tableName="dict_body_test_basic">
+            <column name="id" value="83742aa5-bf6c-49b5-a112-9815724e6411"/>
+            <column name="name" type="jsonb" value='{
+            "en": "1 km Walk Test",
+            "pl": "Test marszu na 1 km",
+            "es": "Prueba de caminata de 1 km",
+            "it": "Test di camminata su 1 km",
+            "ru": "Тест ходьбы на 1 км",
+            "ua": "Тест ходьби на 1 км"
+        }'/>
+            <column name="description" type="jsonb" value='{
+            "en": "Evaluates aerobic capacity using walking speed and heart rate.",
+            "pl": "Ocena wydolności tlenowej poprzez tempo marszu i tętno.",
+            "es": "Evalúa la capacidad aeróbica mediante la velocidad de caminata y la frecuencia cardíaca.",
+            "it": "Valuta la capacità aerobica con velocità e battito cardiaco.",
+            "ru": "Оценка аэробной выносливости по скорости ходьбы и пульсу.",
+            "ua": "Оцінка аеробної витривалості за швидкістю ходьби та пульсом."
+        }'/>
+        </insert>
+
+        <sql>
+            INSERT INTO public.dict_body_test (id, dict_body_test_basic_id, dict_body_test_per_user_id)
+            VALUES
+            ('1b5614c3-f81f-4204-96bc-2a55a626bc43'::uuid, '83742aa5-bf6c-49b5-a112-9815724e6411'::uuid, NULL);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

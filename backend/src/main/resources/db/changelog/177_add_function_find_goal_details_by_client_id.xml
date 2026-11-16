@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.8.xsd">
+
+    <changeSet id="create-find_goal_details_by_client_id-function" author="smykalm">
+        <sqlFile path="../functions/find_goal_details_by_client_id.sql" relativeToChangelogFile="true"
+                 splitStatements="false" stripComments="false"/>
+    </changeSet>
+
+</databaseChangeLog>

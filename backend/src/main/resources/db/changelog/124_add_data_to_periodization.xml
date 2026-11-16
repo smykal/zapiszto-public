@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="drop-data-from-dict-mesocycle-phase" author="smykalm">
+        <sql>
+            DELETE FROM public.periodization;
+            DELETE FROM public.dict_mesocycle_phase;
+            DELETE FROM public.dict_mesocycle_phase_basic;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create-sequence-periodization-id" author="smykalm">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sequenceExists sequenceName="periodization_id_seq"/>
+            </not>
+        </preConditions>
+        <createSequence sequenceName="periodization_id_seq"/>
+    </changeSet>
+
+    <changeSet id="alter-periodization-id-default" author="smykalm">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sqlCheck expectedResult="0">
+                    SELECT COUNT(*) FROM information_schema.columns
+                    WHERE table_schema = 'public' AND table_name = 'periodization' AND column_name = 'id' AND column_default = 'nextval(''periodization_id_seq''::regclass)';
+                </sqlCheck>
+            </not>
+        </preConditions>
+        <addDefaultValue tableName="periodization" columnName="id" defaultValueSequenceNext="periodization_id_seq"/>
+    </changeSet>
+
+    <changeSet id="insert-into-dict-mesocycle-phase-basic" author="smykalm">
+        <sql>
+            INSERT INTO public.dict_mesocycle_phase_basic ("name", shortcut) VALUES('strength', 'empty');
+            INSERT INTO public.dict_mesocycle_phase (dict_mesocycle_phase_basic_id) VALUES((SELECT id from public.dict_mesocycle_phase_basic where "name" = 'strength'));
+
+            INSERT INTO public.dict_mesocycle_phase_basic ("name", shortcut) VALUES('mass', 'empty');
+            INSERT INTO public.dict_mesocycle_phase (dict_mesocycle_phase_basic_id) VALUES((SELECT id from public.dict_mesocycle_phase_basic where "name" = 'mass'));
+
+            INSERT INTO public.dict_mesocycle_phase_basic ("name", shortcut) VALUES('reduction', 'empty');
+            INSERT INTO public.dict_mesocycle_phase (dict_mesocycle_phase_basic_id) VALUES((SELECT id from public.dict_mesocycle_phase_basic where "name" = 'reduction'));
+
+            INSERT INTO public.dict_mesocycle_phase_basic ("name", shortcut) VALUES('health', 'empty');
+            INSERT INTO public.dict_mesocycle_phase (dict_mesocycle_phase_basic_id) VALUES((SELECT id from public.dict_mesocycle_phase_basic where "name" = 'health'));
+        </sql>
+
+        <sql>
+            INSERT INTO public.periodization (id, "name", duration, order_id, dict_mesocycle_phase_id, color, description) VALUES(1, 'strength', 1, 1,(select dmp.id from public.dict_mesocycle_phase dmp left join dict_mesocycle_phase_basic dmpb ON dmp.dict_mesocycle_phase_basic_id = dmpb.id  where dmpb."name" = 'strength'), 'red', 'opis');
+            INSERT INTO public.periodization (id, "name", duration, order_id, dict_mesocycle_phase_id, color, description) VALUES(2, 'mass', 1, 1,(select dmp.id from public.dict_mesocycle_phase dmp left join dict_mesocycle_phase_basic dmpb ON dmp.dict_mesocycle_phase_basic_id = dmpb.id  where dmpb."name" = 'mass'), 'red', 'opis');
+            INSERT INTO public.periodization (id, "name", duration, order_id, dict_mesocycle_phase_id, color, description) VALUES(3, 'reduction', 1, 1,(select dmp.id from public.dict_mesocycle_phase dmp left join dict_mesocycle_phase_basic dmpb ON dmp.dict_mesocycle_phase_basic_id = dmpb.id  where dmpb."name" = 'reduction'), 'red', 'opis');
+            INSERT INTO public.periodization (id, "name", duration, order_id, dict_mesocycle_phase_id, color, description) VALUES(4, 'health', 1, 1,(select dmp.id from public.dict_mesocycle_phase dmp left join dict_mesocycle_phase_basic dmpb ON dmp.dict_mesocycle_phase_basic_id = dmpb.id  where dmpb."name" = 'health'), 'red', 'opis');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

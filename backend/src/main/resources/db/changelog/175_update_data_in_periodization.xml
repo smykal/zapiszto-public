@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="update-periodization-descriptions" author="smykalm">
+        <update tableName="periodization">
+            <column name="description" value="Training focused on developing strength through heavy exercises with low repetitions and longer rest periods." />
+            <where>id = 1</where>
+        </update>
+
+        <update tableName="periodization">
+            <column name="description" value="A plan aimed at building muscle mass with moderate intensity, higher repetitions, and progressive overload." />
+            <where>id = 2</where>
+        </update>
+
+        <update tableName="periodization">
+            <column name="description" value="Training designed to burn fat by combining strength exercises and high-intensity cardio." />
+            <where>id = 3</where>
+        </update>
+
+        <update tableName="periodization">
+            <column name="description" value="A program promoting overall fitness and health, based on diverse, moderate exercises to enhance cardiovascular performance and mobility." />
+            <where>id = 4</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

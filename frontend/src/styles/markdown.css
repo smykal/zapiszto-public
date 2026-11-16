@@ -1,0 +1,14 @@
+/* Styles for Markdown content */
+
+/* General link styles */
+.markdown a {
+  color: var(--color03); /* Use the custom color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for links */
+.markdown a:hover {
+  color: var(--color05); /* Optional: Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}

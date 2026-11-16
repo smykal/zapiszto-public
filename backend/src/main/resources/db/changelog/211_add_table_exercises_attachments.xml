@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <changeSet id="2026-01-12-create-exercises-attachments" author="smykalm">
+
+        <createTable tableName="exercises_attachments">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="exercise_id" type="uuid">
+                <constraints/>
+            </column>
+
+            <column name="dict_exercises_id" type="uuid">
+                <constraints/>
+            </column>
+
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="extension" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="bytes" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="folder" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="create_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Foreign Keys -->
+        <addForeignKeyConstraint
+                baseTableName="exercises_attachments"
+                baseColumnNames="exercise_id"
+                referencedTableName="exercises"
+                referencedColumnNames="id"
+                constraintName="fk_ex_attach_exercise"/>
+
+        <addForeignKeyConstraint
+                baseTableName="exercises_attachments"
+                baseColumnNames="dict_exercises_id"
+                referencedTableName="dict_exercises"
+                referencedColumnNames="id"
+                constraintName="fk_ex_attach_dict_exercise"/>
+    </changeSet>
+
+</databaseChangeLog>

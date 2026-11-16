@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="change-bands-to-band" author="smykalm">
+        <update tableName="dict_equipment_basic">
+            <column name="name" type="jsonb">
+                <![CDATA[
+                {
+                    "en": "Band",
+                    "es": "Banda",
+                    "it": "Fascia",
+                    "pl": "Guma",
+                    "ru": "Эспандер",
+                    "ua": "Гумка"
+                }
+                ]]>
+            </column>
+            <where>id = '96e107dc-ce17-4b86-9fe0-e65737924ea2'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>
