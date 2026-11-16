@@ -63,6 +63,9 @@ The application follows a client-server architecture, separating the frontend fr
                             Database
                            PostgreSQL
 ```
+<p align="center">
+  <img src="backend/src/main/resources/zapiszto.png" alt="ZapiszTo application" width="800"/>
+</p>
 
 ### Backend
 
